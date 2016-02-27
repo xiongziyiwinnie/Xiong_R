@@ -40,7 +40,6 @@ print(p2)
 require("ggplot2")
 require("grid")
 require(gridExtra)
-library("gridExtra")
 data("diamonds")
 #call in the graphics drawing and layout packages we need
 #call in the data Diamonds we are going to work with
@@ -94,19 +93,19 @@ plot3<- grid.arrange(d_pr, p3, blankplot,d_cr, ncol = 2, nrow =2 ,
 print(plot3)
 #divide the screenview into 4 part,two rows and two columns with the width ratio
 #in the same row is 1:5 and height ratio in the same row is 5:1
-#arrange the d_pr,p3,blankplot,d_cr into this four parts in sequence.
+#arrange the d_pr,p3,blankplot,d_cr into this four parts in sequence from row to column.
 #finally output the plots 
 
 ####another way to display plot3
 #The following way is from Professor G's instructions
-#since I have run those three ggplots before,here I only put in tha scripts concerning
+#since I have run those three ggplots before,here I only put in the scripts concerning
 #on the display of the three plots
 grid.newpage()
 pushViewport(viewport(layout=grid.layout(10,10)))
 print(p3,vp=viewport(layout.pos.row =1:8,layout.pos.col =3:10))
 print(d_pr,vp=viewport(layout.pos.row =7:8,layout.pos.col =3:7,angle=90))
 print(d_cr,vp=viewport(layout.pos.row =9:10,layout.pos.col =3:10))
-#divide the screen view into 10*10 grids display and these three plots by assigning those grids
+#divide the screen view into 10*10 grids display and these three plots by assigning those grids to them
 
 
 
@@ -152,8 +151,9 @@ d_cr<-ggplot(data=d_new,mapping=aes(x=carat,colour=color))+
 grid.newpage()
 print(p3,vp=viewport(width=1,height=1))
 print(d_pr,vp=viewport(x=0.3,y=0.3,width=0.4,height=0.3))
-##why here need not upViewport()?Logically it should return back to previous region
+##why here need not upViewport()?When I put this clause, errors comeout.But
+#logically I think it should return back to previous region
 print(d_cr,vp=viewport(x=0.8,y=0.6,width=0.4,height=0.3))
 #display three plots in the screen view by pushing three viewport,each with one plot.
-#the placement of each was designated by setting those arguements values,x,y,width,height
+#the placement of each was designated by setting those parameters values,x,y,width,height
 #these values were obtained through by trial and error
