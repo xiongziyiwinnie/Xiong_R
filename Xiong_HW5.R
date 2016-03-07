@@ -30,6 +30,8 @@ rep(tmp,10)
 #rep(x,n) creates a vector with reapeting x for n times
 
 #(f)(4,6,3,4,6,3,...,4,6,3)where there are 11 occurences of 4,10 occurences of 6 and 10 occurrences of 3.
+## Prof G: Not generalized. Have to know what's
+##         contained in tmp. rep(tmp, l=31) is better.
 c(rep(tmp,t=10),4)         
 #first repeat (4,6,3) for ten times and add 4 to make 11 occurences of 4 in this vector
 
@@ -153,8 +155,8 @@ xVec[order(yVec)]
 
 #(h)
 yVec[seq(1,250,by=3)] 
-#first create a sequence 1,4,7,10,13,¡K
-#pick out the elements in yVec	at index positions 1,4,7,10,13,¡K
+#first create a sequence 1,4,7,10,13,?K
+#pick out the elements in yVec	at index positions 1,4,7,10,13,?K
 
 #8.By using the function cumproud or otherwise, calculate:
 m=seq(2,38,by=2)
